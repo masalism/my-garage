@@ -9,6 +9,7 @@
 <body>
     <a href="/">Home</a>
     <a href="/cars">Cars</a>
+    <a href="/garages">Garages</a>
     @yield('content')
 </body>
 </html>

@@ -10,7 +10,7 @@
             @endforeach
         </div>
     @endif
-    <form method="POST" action="/cars">
+    <form method="POST" action="{{ route('cars.store') }}">
         @csrf
         <label for="manufacturer">Manufacturer:</label><br>
         <input type="text" id="manufacturer" name="manufacturer"><br>
