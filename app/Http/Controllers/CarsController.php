@@ -14,7 +14,9 @@ class CarsController extends Controller
      */
     public function index()
     {
-        $cars = Car::all();
+        // $cars = Car::all();
+        $cars = Car::orderBy('manufacturer', 'asc')->paginate(10);
+        // return $cars = Car::where('model', '320D')->get();
         return view('cars.index')->with('cars', $cars);
     }
 
@@ -25,7 +27,7 @@ class CarsController extends Controller
      */
     public function create()
     {
-        //
+        return view('cars.create');
     }
 
     /**
@@ -36,7 +38,24 @@ class CarsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'manufacturer' => 'required',
+            'model' => 'required',
+            'year' => 'required',
+            'price' => 'required'
+        ]);
+
+        $car = new Car;
+        $car->manufacturer = $request->input('manufacturer');
+        $car->model = $request->input('model');
+        $car->year = $request->input('year');
+        $car->price = $request->input('price');
+        $car->save();
+        // return redirect('/cars');
+        return ($car->save() !== 1) ?
+            redirect('/cars')->with('status_success', 'Car Added') :
+            redirect('/cars')->with('status_error', 'Car Was Not Added');
+
     }
 
     /**
@@ -59,7 +78,8 @@ class CarsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $car = Car::find($id);
+        return view('cars/edit')->with('car', $car);
     }
 
     /**
@@ -71,7 +91,23 @@ class CarsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'manufacturer' => 'required',
+            'model' => 'required',
+            'year' => 'required',
+            'price' => 'required'
+        ]);
+
+        $car = Car::find($id);
+        $car->manufacturer = $request->input('manufacturer');
+        $car->model = $request->input('model');
+        $car->year = $request->input('year');
+        $car->price = $request->input('price');
+        $car->save();
+        // return redirect('/cars');
+        return ($car->save() !== 1) ?
+            redirect('/cars')->with('status_success', 'Car Updated') :
+            redirect('/cars')->with('status_error', 'Car Was Not Updated');
     }
 
     /**
@@ -82,6 +118,7 @@ class CarsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Car::destroy($id);
+        return redirect('/cars')->with('status_success', 'Car Removed');
     }
 }

@@ -7,6 +7,8 @@
 <title>My Garage</title>
 </head>
 <body>
+    <a href="/">Home</a>
+    <a href="/cars">Cars</a>
     @yield('content')
 </body>
 </html>
