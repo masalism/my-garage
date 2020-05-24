@@ -1,0 +1,38 @@
+.show-container {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.show {
+    margin-top: 1rem;
+    border-radius: 5px;
+    display: flex;
+    padding: 2rem;
+    background: linear-gradient(
+        to right bottom,
+        rgba(white, .9),
+        rgba(white, .9));
+}
+
+.show-car {
+    font-size: 3rem;
+}
+
+.show-garage {
+    margin-top: 1rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background: linear-gradient(
+        to right bottom,
+        rgba(white, .9),
+        rgba(white, .9));
+}
+
+.in-garage {
+    font-size: 2rem;
+}

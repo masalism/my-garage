@@ -1,0 +1,50 @@
+.nav {
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(
+        to right bottom,
+        rgba(black, .6),
+        rgba(black, .6));
+
+    &__container {
+        width: 120rem;
+        margin: 0 auto;
+        display: flex;
+        justify-content: start;
+
+    }
+
+    &__link {
+        display: inline-block;
+        text-decoration: none;
+        color: white;
+        padding: 0.4rem 1rem;
+        border-radius: 5px;
+        transition: all .2s;
+
+        &:not(:first-child) {
+            margin-left: 4rem;
+        }
+
+        &--home:hover {
+            background-color: blue;
+            transform: translateY(-3px);
+        }
+
+        &--cars:hover {
+            background-color: darkolivegreen;
+            transform: translateY(-3px);
+        }
+
+        &--garages:hover {
+            background-color: indianred;
+            transform: translateY(-3px);
+        }
+
+        &:active {
+            transform: translateY(-1px);
+        }
+    }
+}

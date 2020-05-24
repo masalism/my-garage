@@ -1,13 +1,23 @@
 @extends('layouts.app')
+@include('inc.navbar')
 
 @section('content')
-    <a href="/garages">Go Back</a>
-    <h1>{{$garage->garage_name}}</h1>
-    <p>
-        @if (count($garage->cars) >  0)
-            @foreach ($garage->cars as $car)
-                {{$car->manufacturer}} {{$car->model}} <br>
-            @endforeach
-        @endif
-    </p>
+<div class="show-container">
+    <a class="btn-back" href="/garages">Go Back</a>
+    <div class="show-garage">
+        <h1>{{$garage->garage_name}}</h1>
+
+            @if (count($garage->cars) >  0)
+                <p class="in-garage">Cars in this Garage:</p>
+                @foreach ($garage->cars as $car)
+                   <p class="car-list"> {{$car->manufacturer}} {{$car->model}}</p> <br>
+                @endforeach
+            @else
+                <p class="in-garage">No cars in this garage</p>
+            @endif
+
+    </div>
+
+</div>
+
 @endsection

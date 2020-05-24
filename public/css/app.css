@@ -1,0 +1,417 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(https://media.evo.co.uk/image/private/s--etu10DjC--/v1556220768/evo/2018/07/490258.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  display: flex;
+  height: 85vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.home {
+  min-width: 60rem;
+  min-height: 50rem;
+  max-height: 100rem;
+  max-width: 100rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
+}
+
+.home__links {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.home__p {
+  width: 50%;
+}
+
+.home__p p {
+  font-size: 1.5rem;
+}
+
+.cars {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cars__new {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  transition: all 0.2s;
+  background-color: darkolivegreen;
+  margin: 2rem 0;
+  outline: none;
+}
+
+.cars__new:hover {
+  transform: translateY(-3px);
+}
+
+.cars__new:active {
+  transform: translateY(-1px);
+}
+
+.btn {
+  background-color: red;
+  padding: 1.5rem 1.2rem;
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: white;
+  border-radius: 7px;
+  letter-spacing: 1px;
+  transition: all 0.2s;
+}
+
+.btn__cars {
+  background-color: darkolivegreen;
+  border: 2px solid darkolivegreen;
+}
+
+.btn__cars:hover {
+  background-color: transparent;
+  color: darkolivegreen;
+  font-weight: 700;
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+.btn__cars:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.btn__garages {
+  background-color: indianred;
+  border: 2px solid indianred;
+}
+
+.btn__garages:hover {
+  background-color: transparent;
+  color: indianred;
+  font-weight: 700;
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+.btn__garages:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.btn__small {
+  padding: 0.8rem 1.2rem;
+  text-decoration: none;
+  font-size: 1.5rem;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  letter-spacing: 1px;
+  transition: all 0.2s;
+}
+
+.btn__small--remove {
+  background-color: darkred;
+  text-decoration: none;
+  color: white;
+}
+
+.btn__small--remove:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.3);
+}
+
+.btn__small--remove:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.3);
+}
+
+.btn__small--edit {
+  margin-left: 2rem;
+  background-color: darkcyan;
+}
+
+.btn__small--edit a {
+  text-decoration: none;
+  color: white;
+}
+
+.btn__small--edit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.3);
+}
+
+.btn__small--edit:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.3);
+}
+
+.btn-back {
+  padding: 0.8rem 1.2rem;
+  text-decoration: none;
+  font-size: 1.5rem;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  letter-spacing: 1px;
+  transition: all 0.2s;
+  background-color: grey;
+  text-decoration: none;
+  color: white;
+}
+
+.btn-back:hover {
+  background-color: darkgrey;
+  transform: translateY(-3px);
+  box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.3);
+}
+
+.btn-back:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.3);
+}
+
+.forms-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.forms-container h1 {
+  color: white;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 50rem;
+}
+
+input[type=text],
+input[type=number] {
+  border: none;
+  font-size: 1.6rem;
+  padding: 1rem 1.3rem;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
+  margin-top: 5px;
+  border-bottom: 3px solid transparent;
+}
+
+input[type=text]:focus,
+input[type=number]:focus {
+  border-bottom: 3px solid darkslateblue;
+  outline: none;
+}
+
+select {
+  border: none;
+  font-size: 1.6rem;
+  padding: 1rem 1.3rem;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
+  margin-top: 5px;
+}
+
+label {
+  color: white;
+  font-size: 1.8rem;
+}
+
+.submit {
+  background: green;
+  color: white;
+  transition: all 0.2s;
+  border: none;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.submit:hover {
+  background: limegreen;
+}
+
+.garages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.garages__new {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  transition: all 0.2s;
+  background-color: darkolivegreen;
+  margin: 2rem 0;
+  outline: none;
+}
+
+.garages__new:hover {
+  transform: translateY(-3px);
+}
+
+.garages__new:active {
+  transform: translateY(-1px);
+}
+
+.nav {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+}
+
+.nav__container {
+  width: 120rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: start;
+}
+
+.nav__link {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+
+.nav__link:not(:first-child) {
+  margin-left: 4rem;
+}
+
+.nav__link--home:hover {
+  background-color: blue;
+  transform: translateY(-3px);
+}
+
+.nav__link--cars:hover {
+  background-color: darkolivegreen;
+  transform: translateY(-3px);
+}
+
+.nav__link--garages:hover {
+  background-color: indianred;
+  transform: translateY(-3px);
+}
+
+.nav__link:active {
+  transform: translateY(-1px);
+}
+
+.show-container {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.show {
+  margin-top: 1rem;
+  border-radius: 5px;
+  display: flex;
+  padding: 2rem;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
+}
+
+.show-car {
+  font-size: 3rem;
+}
+
+.show-garage {
+  margin-top: 1rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
+}
+
+.in-garage {
+  font-size: 2rem;
+}
+
+table {
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
+  width: 90%;
+  font-size: 1.8rem;
+}
+
+thead {
+  background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+}
+
+th {
+  color: white;
+  padding: 1rem;
+}
+
+tbody {
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
+}
+
+td {
+  padding: 1rem;
+}
+
+td .td-link {
+  color: darkorchid;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.2s;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+td .td-link:hover {
+  background-color: darkorchid;
+  color: white;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+h1 {
+  font-size: 5rem;
+  letter-spacing: 3px;
+  margin: 0 2rem;
+}
+
+h1.white {
+  color: white;
+}
+

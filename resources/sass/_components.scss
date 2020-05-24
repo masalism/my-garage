@@ -1,0 +1,116 @@
+.btn {
+    background-color: red;
+    padding: 1.5rem 1.2rem;
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: white;
+    border-radius: 7px;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+
+    &__cars {
+        background-color: darkolivegreen;
+        border: 2px solid darkolivegreen;
+
+        &:hover {
+            background-color: transparent;
+            color: darkolivegreen;
+            font-weight: 700;
+            transform: translateY(-3px);
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+        }
+
+        &:active {
+            transform: translateY(-1px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    &__garages {
+        background-color: indianred;
+        border: 2px solid indianred;
+
+        &:hover {
+            background-color: transparent;
+            color: indianred;
+            font-weight: 700;
+            transform: translateY(-3px);
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+        }
+
+        &:active {
+            transform: translateY(-1px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+        }
+    }
+}
+
+.btn__small {
+    padding: 0.8rem 1.2rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+
+    &--remove {
+        background-color: darkred;
+        text-decoration: none;
+        color: white;
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.3);
+        }
+
+        &:focus {
+            transform: translateY(-1px);
+            box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    &--edit {
+        margin-left: 2rem;
+        background-color: darkcyan;
+
+        & a {
+            text-decoration: none;
+            color: white;
+        }
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.3);
+        }
+
+        &:focus {
+            transform: translateY(-1px);
+            box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.3);
+        }
+    }
+}
+
+.btn-back {
+    padding: 0.8rem 1.2rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+    background-color: grey;
+    text-decoration: none;
+    color: white;
+
+    &:hover {
+        background-color: darkgrey;
+        transform: translateY(-3px);
+        box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.3);
+    }
+
+    &:focus {
+        transform: translateY(-1px);
+        box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.3);
+    }
+}

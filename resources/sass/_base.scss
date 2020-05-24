@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(black, 0.0),
+        rgba(black, 0.0)),
+        url(https://media.evo.co.uk/image/private/s--etu10DjC--/v1556220768/evo/2018/07/490258.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+    display: flex;
+    height: 85vh;
+    align-items: center;
+    justify-content: center;
+}
+
+
