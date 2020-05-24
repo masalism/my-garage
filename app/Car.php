@@ -14,6 +14,6 @@ class Car extends Model
     public $timestamps = true;
 
     public function garage() {
-        return $this->belongsTo('App\Garages');
+        return $this->belongsTo('App\Garage');
     }
 }

@@ -17,6 +17,7 @@
                 <th>Model</th>
                 <th>Year</th>
                 <th>Price</th>
+                <th>Garage</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -27,6 +28,13 @@
                     <td>{{$car->model}}</td>
                     <td>{{$car->year}}</td>
                     <td>{{$car->price}}</td>
+                    <td>
+                        @foreach ($garages as $garage)
+                            @if ($car->garage_id == $garage->id)
+                                {{$garage->garage_name}}
+                            @endif
+                        @endforeach
+                    </td>
                     <td>
                         <form action="{{ route('cars.destroy', $car->id) }}" method="POST">
                             @method('DELETE') @csrf

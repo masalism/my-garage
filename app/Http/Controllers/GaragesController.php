@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Car;
 use Illuminate\Http\Request;
+use App\Garage;
 
 class GaragesController extends Controller
 {
@@ -13,7 +15,10 @@ class GaragesController extends Controller
      */
     public function index()
     {
-        //
+        $garages = Garage::orderBy('garage_name', 'asc')->paginate(10);
+
+        // return $cars = Car::where('model', '320D')->get();
+        return view('garages.index')->with('garages', $garages);
     }
 
     /**
@@ -23,7 +28,7 @@ class GaragesController extends Controller
      */
     public function create()
     {
-        //
+        return view('garages.create');
     }
 
     /**
@@ -34,7 +39,16 @@ class GaragesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'garage_name' => 'required'
+        ]);
+
+        $garage = new Garage;
+        $garage->garage_name = $request->input('garage_name');
+        $garage->save();
+        return ($garage->save() !== 1) ?
+            redirect('/garages')->with('status_success', 'Garage Created') :
+            redirect('/garages')->with('status_error', 'Garage not created');
     }
 
     /**
@@ -45,7 +59,8 @@ class GaragesController extends Controller
      */
     public function show($id)
     {
-        //
+        $garage = Garage::find($id);
+        return view('garages/show')->with('garage', $garage);
     }
 
     /**
@@ -56,7 +71,8 @@ class GaragesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $garage = Garage::find($id);
+        return view('garages/edit')->with('garage', $garage);
     }
 
     /**
@@ -68,7 +84,16 @@ class GaragesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'garage_name' => 'required'
+        ]);
+
+        $garage = Garage::find($id);
+        $garage->garage_name = $request->input('garage_name');
+        $garage->save();
+        return ($garage->save() !== 1) ?
+            redirect('/garages')->with('status_success', 'Garage Updated') :
+            redirect('/garages')->with('status_error', 'Garage Updated');
     }
 
     /**
@@ -79,6 +104,12 @@ class GaragesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cars = Car::where('garage_id', '=',  $id)->get();
+        foreach ($cars as $car) {
+            $car->garage_id = null;
+            $car->save();
+        }
+        Garage::destroy($id);
+        return redirect('/garages')->with('status_success', 'Garage Destroyed');
     }
 }

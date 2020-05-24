@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Car;
+use App\Garage;
 
 class CarsController extends Controller
 {
@@ -16,8 +17,10 @@ class CarsController extends Controller
     {
         // $cars = Car::all();
         $cars = Car::orderBy('manufacturer', 'asc')->paginate(10);
+        $garages = Garage::all();
         // return $cars = Car::where('model', '320D')->get();
-        return view('cars.index')->with('cars', $cars);
+
+        return view('cars.index')->with('cars', $cars)->with('garages', $garages);
     }
 
     /**
@@ -27,7 +30,8 @@ class CarsController extends Controller
      */
     public function create()
     {
-        return view('cars.create');
+        $garages = Garage::all();
+        return view('cars.create')->with('garages', $garages);
     }
 
     /**
@@ -50,6 +54,7 @@ class CarsController extends Controller
         $car->model = $request->input('model');
         $car->year = $request->input('year');
         $car->price = $request->input('price');
+        $car->garage_id = $request->input('garage_id');
         $car->save();
         // return redirect('/cars');
         return ($car->save() !== 1) ?
@@ -79,7 +84,8 @@ class CarsController extends Controller
     public function edit($id)
     {
         $car = Car::find($id);
-        return view('cars/edit')->with('car', $car);
+        $garages = Garage::all();
+        return view('cars/edit')->with('car', $car)->with('garages', $garages);
     }
 
     /**
@@ -103,6 +109,7 @@ class CarsController extends Controller
         $car->model = $request->input('model');
         $car->year = $request->input('year');
         $car->price = $request->input('price');
+        $car->garage_id = $request->input('garage_id');
         $car->save();
         // return redirect('/cars');
         return ($car->save() !== 1) ?

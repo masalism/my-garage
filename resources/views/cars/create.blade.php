@@ -18,8 +18,16 @@
         <input type="text" id="model" name="model"><br><br>
         <label for="year">Year:</label><br>
         <input type="number" id="year" name="year"><br><br>
-        <label for="price">price:</label><br>
+        <label for="price">Price:</label><br>
         <input type="number" id="price" name="price"><br><br>
+        <label for="garage_id">Garage:</label><br>
+        <select name="garage_id" id="garage_id">
+            <option value="">----------</option>
+            @foreach ($garages as $garage)
+                <option value="{{$garage->id}}">{{$garage->garage_name}}</option>
+            @endforeach
+        </select>
+        {{-- <input type="text" id="garage_id" name="garage_id"><br><br> --}}
         <input type="submit" value="Submit">
     </form>
 
