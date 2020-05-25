@@ -1,0 +1,59 @@
+-- MySQL dump 10.13  Distrib 8.0.18, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: mygarage
+-- ------------------------------------------------------
+-- Server version	8.0.18
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `cars`
+--
+
+DROP TABLE IF EXISTS `cars`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `cars` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `manufacturer` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `model` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `year` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
+  `garage_id` bigint(20) unsigned DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `cars_garage_id_foreign` (`garage_id`),
+  CONSTRAINT `cars_garage_id_foreign` FOREIGN KEY (`garage_id`) REFERENCES `garages` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cars`
+--
+
+LOCK TABLES `cars` WRITE;
+/*!40000 ALTER TABLE `cars` DISABLE KEYS */;
+INSERT INTO `cars` VALUES (1,'BMW','320D',2007,3750,4,'2020-05-25 03:55:05','2020-05-25 03:55:05'),(2,'Mazda','CX-3',2019,24000,4,'2020-05-25 03:55:30','2020-05-25 03:55:30'),(3,'Audi','A4',2009,6000,2,'2020-05-25 03:55:53','2020-05-25 03:55:53'),(4,'Porsche','918 Spyder',2016,1000000,1,'2020-05-25 03:56:17','2020-05-25 03:56:17'),(5,'Volvo','CX-90',2004,4000,NULL,'2020-05-25 03:56:42','2020-05-25 03:56:42'),(6,'Ferrari','LaFerrari',2018,1500000,1,'2020-05-25 03:57:09','2020-05-25 03:57:09'),(7,'Mercedes-Benz','C220',2003,2500,3,'2020-05-25 03:57:40','2020-05-25 03:57:40'),(8,'Subaru','Outback',2011,7000,NULL,'2020-05-25 03:59:13','2020-05-25 03:59:13'),(9,'Mclaren','P1',2014,2000000,1,'2020-05-25 03:59:33','2020-05-25 03:59:33'),(10,'BMW','120i',2008,4200,3,'2020-05-25 03:59:58','2020-05-25 03:59:58');
+/*!40000 ALTER TABLE `cars` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2020-05-25 10:11:56
