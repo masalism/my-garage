@@ -16,7 +16,7 @@ class CarsController extends Controller
     public function index()
     {
         // $cars = Car::all();
-        $cars = Car::orderBy('manufacturer', 'asc')->paginate(10);
+        $cars = Car::orderBy('manufacturer', 'asc')->get();
         $garages = Garage::all();
         // return $cars = Car::where('model', '320D')->get();
 

@@ -11,7 +11,7 @@ body {
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.7;
-  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(https://media.evo.co.uk/image/private/s--etu10DjC--/v1556220768/evo/2018/07/490258.jpg);
+  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url(https://media.evo.co.uk/image/private/s--etu10DjC--/v1556220768/evo/2018/07/490258.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -24,6 +24,24 @@ body {
   height: 85vh;
   align-items: center;
   justify-content: center;
+}
+
+.success {
+  color: green;
+  background: linear-gradient(to right bottom, rgba(144, 238, 144, 0.9), rgba(144, 238, 144, 0.9));
+  padding: 1rem;
+  width: 70%;
+  text-align: center;
+  border: 1px solid green;
+}
+
+.error {
+  color: red;
+  background: linear-gradient(to right bottom, rgba(205, 92, 92, 0.9), rgba(205, 92, 92, 0.9));
+  padding: 1rem;
+  width: 70%;
+  text-align: center;
+  border: 1px solid red;
 }
 
 .home {
@@ -73,10 +91,14 @@ body {
 
 .cars__new:hover {
   transform: translateY(-3px);
+  background-color: limegreen;
+  box-shadow: 0 1rem 2rem rgba(144, 238, 144, 0.3);
 }
 
 .cars__new:active {
   transform: translateY(-1px);
+  background-color: limegreen;
+  box-shadow: 0 1rem 2rem rgba(144, 238, 144, 0.3);
 }
 
 .btn {
@@ -143,6 +165,7 @@ body {
 }
 
 .btn__small--remove:hover {
+  background-color: orangered;
   transform: translateY(-3px);
   box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.3);
 }
@@ -163,6 +186,7 @@ body {
 }
 
 .btn__small--edit:hover {
+  background-color: cyan;
   transform: translateY(-3px);
   box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.3);
 }
@@ -194,6 +218,17 @@ body {
 .btn-back:focus {
   transform: translateY(-1px);
   box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.3);
+}
+
+.no {
+  text-align: center;
+  color: red;
+  font-size: 3rem;
+  background: linear-gradient(to right bottom, rgba(205, 92, 92, 0.9), rgba(205, 92, 92, 0.9));
+  width: 60%;
+  margin-top: 10rem;
+  padding: 2rem;
+  border-radius: 10px;
 }
 
 .forms-container {
@@ -294,7 +329,7 @@ label {
   width: 120rem;
   margin: 0 auto;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .nav__link {
@@ -366,6 +401,7 @@ table {
   background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
   width: 90%;
   font-size: 1.8rem;
+  margin-bottom: 2rem;
 }
 
 thead {

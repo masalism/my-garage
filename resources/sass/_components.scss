@@ -60,6 +60,7 @@
         color: white;
 
         &:hover {
+            background-color: orangered;
             transform: translateY(-3px);
             box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.3);
         }
@@ -80,6 +81,7 @@
         }
 
         &:hover {
+            background-color: cyan;
             transform: translateY(-3px);
             box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.3);
         }
@@ -114,3 +116,18 @@
         box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.3);
     }
 }
+
+.no {
+    text-align: center;
+    color: red;
+    font-size: 3rem;
+    background: linear-gradient(
+        to right bottom,
+        rgba(indianred, 0.9),
+        rgba(indianred, 0.9));
+        width: 60%;
+    margin-top: 10rem;
+    padding: 2rem;
+    border-radius: 10px;
+}
+

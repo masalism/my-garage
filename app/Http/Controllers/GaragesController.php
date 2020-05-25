@@ -15,7 +15,7 @@ class GaragesController extends Controller
      */
     public function index()
     {
-        $garages = Garage::orderBy('garage_name', 'asc')->paginate(10);
+        $garages = Garage::orderBy('garage_name', 'asc')->get();
 
         // return $cars = Car::where('model', '320D')->get();
         return view('garages.index')->with('garages', $garages);

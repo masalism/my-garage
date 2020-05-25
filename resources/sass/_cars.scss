@@ -17,11 +17,14 @@
 
         &:hover {
             transform: translateY(-3px);
+            background-color: limegreen;
+            box-shadow: 0 1rem 2rem rgba(lightgreen, 0.3);
         }
 
         &:active {
             transform: translateY(-1px);
-
+            background-color: limegreen;
+            box-shadow: 0 1rem 2rem rgba(lightgreen, 0.3);
         }
     }
 }

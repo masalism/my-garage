@@ -2,16 +2,19 @@
 @include('inc.navbar')
 
 @section('content')
-@if (session('status_success'))
-<p style="color: green"><b>{{ session('status_success') }}</b></p>
-@else
-<p style="color: red"><b>{{ session('status_error') }}</b></p>
-@endif
+
 
 @if (count($garages) > 0)
     <div class="garages">
-        <h1>Garages</h1>
-        <a class="garages__new" href="/garages/create">Create New Garage</a>
+        @if (session('status_success'))
+        <p class="success">{{ session('status_success') }}</p>
+        @elseif (session('status_error'))
+        <p class="error">{{ session('status_error') }}</p>
+        @else
+        <p></p>
+        @endif
+        <h1 class="white">Garages</h1>
+        <a class="cars__new" href="/garages/create">Create New Garage</a>
         <table>
             <thead>
                 <tr>
@@ -47,7 +50,11 @@
     </div>
 
 @else
-    <p>You Have No Garages</p>
+<div class="garages">
+    <p class="no">You Have No Garages</p>
+    <a class="garages__new" href="/garages/create">Create New Garage</a>
+
+</div>
 @endif
 @endsection
 
