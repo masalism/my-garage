@@ -1,6 +1,7 @@
 @extends('layouts.app')
-@include('inc.navbar')
 @section('content')
+@include('inc.navbar')
+
 <div class="show-container">
     <a class="btn-back" href="/cars">Go Back</a>
     <div class="show">

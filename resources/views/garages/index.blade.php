@@ -1,7 +1,7 @@
 @extends('layouts.app')
-@include('inc.navbar')
 
 @section('content')
+@include('inc.navbar')
 
 
 @if (count($garages) > 0)
